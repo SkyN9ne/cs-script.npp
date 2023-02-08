@@ -1,16 +1,22 @@
-echo off
+@echo OFF
 
-set config=Debug
-set cpu=x86
-set dest_root=C:\Program Files (x86)
+TITLE CS-Script Notepad++ Plugin Deployer
+COLOR 0A
 
-set plugin_root=%dest_root%\Notepad++ (32)\plugins
+SET config=Debug
+SET cpu=x86
+SET dest_root=C:\Program Files (x86)
 
-md "%plugin_root%\CSScriptNpp"
-md "%plugin_root%\CSScriptNpp\Mdbg"
+SET plugin_root=%dest_root%\Notepad++ (32)\plugins
 
-echo -------------------
-xcopy output\plugins\CSScriptNpp\*.* "%plugin_root%\CSScriptNpp" /Y
-xcopy output\plugins\CSScriptNpp\Mdbg\*.* "%plugin_root%\CSScriptNpp\Mdbg" /Y
-rem move "%plugin_root%\CSScriptNpp\CSScriptNpp.dll" "%plugin_root%\CSScriptNpp\CSScriptNpp.asm.dll"
-copy "output\plugins\CSScriptNpp.x64.dll" "%plugin_root%\CSScriptNpp\CSScriptNpp.dll"
+MD "%plugin_root%\CSScriptNpp"
+MD "%plugin_root%\CSScriptNpp\Mdbg"
+
+ECHO Copying files...
+XCOPY output\plugins\CSScriptNpp\*.* "%plugin_root%\CSScriptNpp" /Y
+XCOPY output\plugins\CSScriptNpp\Mdbg\*.* "%plugin_root%\CSScriptNpp\Mdbg" /Y
+REM MOVE "%plugin_root%\CSScriptNpp\CSScriptNpp.dll" "%plugin_root%\CSScriptNpp\CSScriptNpp.asm.dll"
+COPY "output\plugins\CSScriptNpp.x64.dll" "%plugin_root%\CSScriptNpp\CSScriptNpp.dll"
+ECHO Finished. Press any key to exit... 
+
+PAUSE
