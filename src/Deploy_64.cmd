@@ -1,21 +1,28 @@
-echo off
+@echo OFF
 
-set config=Debug
-set cpu=x64
+TITLE CS-Script Notepad++ Plugin Deployer
+COLOR 0A
 
-rem set dest_root=C:\Users\master\AppData\Local\Notepad++\plugins\CSScriptNpp
-set dest_root=C:\Program Files\Notepad++\plugins\CSScriptNpp
+SET config=Debug
+SET cpu=x64
 
-set plugin_root=%dest_root%
+REM SET dest_root=C:\Users\master\AppData\Local\Notepad++\plugins\CSScriptNpp
+SET dest_root=C:\Program Files\Notepad++\plugins\CSScriptNpp
 
-md "%plugin_root%\CSScriptNpp"
-md "%plugin_root%\CSScriptNpp\Mdbg"
+SET plugin_root=%dest_root%
 
-echo -------------------
-rem xcopy output\plugins\CSScriptNpp\*.* "%plugin_root%\CSScriptNpp" /Y
-copy "CSScriptNpp\bin\Debug\CSScriptNpp.dll" "%plugin_root%\CSScriptNpp\CSScriptNpp.dll"
+MD "%plugin_root%\CSScriptNpp"
+MD "%plugin_root%\CSScriptNpp\Mdbg"
 
-rem xcopy output\plugins\CSScriptNpp\Mdbg\*.* "%plugin_root%\CSScriptNpp\Mdbg" /Y
-rem move "%plugin_root%\CSScriptNpp\CSScriptNpp.dll" "%plugin_root%\CSScriptNpp\CSScriptNpp.asm.dll"
-rem copy "output\plugins\CSScriptNpp.x64.dll" "%plugin_root%\CSScriptNpp.dll"
+ECHO Copying... 
+REM XCOPY output\plugins\CSScriptNpp\*.* "%plugin_root%\CSScriptNpp" /Y
+COPY "CSScriptNpp\bin\Debug\CSScriptNpp.dll" "%plugin_root%\CSScriptNpp\CSScriptNpp.dll"
+
+REM XCOPY output\plugins\CSScriptNpp\Mdbg\*.* "%plugin_root%\CSScriptNpp\Mdbg" /Y
+REM MOVE "%plugin_root%\CSScriptNpp\CSScriptNpp.dll" "%plugin_root%\CSScriptNpp\CSScriptNpp.asm.dll"
+REM COPY "output\plugins\CSScriptNpp.x64.dll" "%plugin_root%\CSScriptNpp.dll"
+
+ECHO Finished. Press any key to exit... 
+
+PAUSE
 
