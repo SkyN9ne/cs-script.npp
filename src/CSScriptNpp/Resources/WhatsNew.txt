@@ -1,6 +1,6 @@
-Release v2.0.3.0
+Release v2.0.5.0
 ----
-- Npp compatibility checking (Issue #64) is disabled in favor of hard-codded compatibility for new Scintille.TextRange API.
-  The checking algorithm became fragile in the latest releases of NPP when the editor restarts itself in Admin mode.
-- Updated CS-Script embedded engine to v4.6.4
-- Updated CS-Script.Syntaxer embedded executable to v3.1.2
+- Embedded CS-Script engine is updated to v4.8.16.0
+- Configuration Dialog: Added support for installing external CS-Script engine from WinGet and NuGet.
+- Updated plugin hosting solution to address the Scintilla .NET Interface issue (#74).
+
